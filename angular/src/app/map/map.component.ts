@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {Coordinate} from "../model/coordinate";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Place} from "../model/place";
 
 @Component({
@@ -9,11 +8,11 @@ import {Place} from "../model/place";
 })
 export class MapComponent {
   @Output() markerTriggered = new EventEmitter<Place>();
+  @Input() places: Place[];
   zoom: number = 20;
   lat: number = 51.678418;
   long: number = 7.809007;
   name = "here goes the name";
-  coordinates: Coordinate[] = [{lat: 51.678418, long: 7.809007}, {lat: 51.578418, long: 7.809007}];
 
   constructor(){}
 
