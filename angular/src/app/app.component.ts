@@ -7,8 +7,10 @@ import {Place} from "./model/place";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  showDetails: boolean = false;
 
   openDetails(place: Place) {
     console.log(place);
+    this.showDetails = true;
   }
 }
