@@ -1,26 +1,30 @@
 package pl.hackyeah.lotto.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Place {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String name;
     private boolean isSponsored;
 
-    private double longitude;
     private double latitude;
+    private double longitude;
 
     @OneToMany(mappedBy = "occurence", cascade = CascadeType.ALL)
-    private List<Price> prices;
+    private List<Price> prices = new ArrayList<>();
 
-    public Place(String name, boolean isSponsored) {
+    public Place(String name, boolean isSponsored, double latitude, double longitude) {
         this.name = name;
         this.isSponsored = isSponsored;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public long getId() {

@@ -1,2 +1,6 @@
 *.iml
 \.idea/
+
+*.class
+
+target/classes/META-INF/

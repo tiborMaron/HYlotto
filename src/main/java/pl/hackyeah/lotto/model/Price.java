@@ -1,27 +1,23 @@
 package pl.hackyeah.lotto.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Price {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String name;
-    private String description;
 
     private int quantity;
 
     @ManyToOne
     private Place occurence;
 
-    public Price(String name, String description, int quantity, Place occurence) {
+    public Price(String name, int quantity, Place occurence) {
         this.name = name;
-        this.description = description;
         this.quantity = quantity;
         this.occurence = occurence;
     }
@@ -38,14 +34,6 @@ public class Price {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public int getQuantity() {
         return quantity;
     }
@@ -56,9 +44,5 @@ public class Price {
 
     public Place getOccurence() {
         return occurence;
-    }
-
-    public void setOccurence(Place occurence) {
-        this.occurence = occurence;
     }
 }
