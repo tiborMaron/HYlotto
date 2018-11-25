@@ -1,3 +1,3 @@
 <agm-map [zoom]="zoom" [latitude]="lat" [longitude]="long">
-  <agm-marker *ngFor="let coordinate of coordinates" [latitude]="coordinate.lat" [longitude]="coordinate.long" [title]="name" (markerClick)="onMarkerClick({name: 'asd', lat: 10, long: 10 })"></agm-marker>
+  <agm-marker *ngFor="let place of places" [latitude]="place.latitude" [longitude]="place.longitude" [title]="place.name" (markerClick)="onMarkerClick(place)"></agm-marker>
 </agm-map>

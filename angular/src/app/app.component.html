@@ -1,2 +1,2 @@
-<app-detail [hidden]="!showDetails"></app-detail>
+<app-detail *ngIf="showDetails" [place]="detailPlace" (closeDetail)="showDetails = false;"></app-detail>
 <app-map (markerTriggered)="openDetails($event)" [places]="places"></app-map>
