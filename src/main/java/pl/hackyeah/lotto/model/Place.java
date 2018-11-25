@@ -1,8 +1,7 @@
 package pl.hackyeah.lotto.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Place {
@@ -15,6 +14,9 @@ public class Place {
 
     private double longitude;
     private double latitude;
+
+    @OneToMany(mappedBy = "occurence", cascade = CascadeType.ALL)
+    private List<Price> prices;
 
     public Place(String name, boolean isSponsored) {
         this.name = name;
@@ -55,5 +57,13 @@ public class Place {
 
     public void setLatitude(double latitude) {
         this.latitude = latitude;
+    }
+
+    public List<Price> getPrices() {
+        return prices;
+    }
+
+    public void setPrices(List<Price> prices) {
+        this.prices = prices;
     }
 }
