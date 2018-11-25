@@ -1,3 +1,14 @@
-<p>
-  detail works!
-</p>
+<div class="detail">
+  <i id="close" class="fas fa-times big-shadow" (click)="onClose()"></i>
+  <div class="place-name big-shadow">{{ place.name }}</div>
+  <div class="static-text big-shadow">Available prizes</div>
+  <div class="prizes">
+    <div class="prize" *ngFor="let price of place.prices">
+      <div class="prize-detail">
+        <span class="prize-name">{{ price.name }}</span><br>
+        <span class="prize-quantity">{{ price.quantity }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
