@@ -3,7 +3,7 @@ package pl.hackyeah.lotto.model;
 import javax.persistence.*;
 
 @Entity
-public class Price {
+public class Prize {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,13 +13,12 @@ public class Price {
 
     private int quantity;
 
-    @ManyToOne
-    private Place occurence;
+    public Prize() {
+    }
 
-    public Price(String name, int quantity, Place occurence) {
+    public Prize(String name, int quantity, Place occurence) {
         this.name = name;
         this.quantity = quantity;
-        this.occurence = occurence;
     }
 
     public long getId() {
@@ -40,9 +39,5 @@ public class Price {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public Place getOccurence() {
-        return occurence;
     }
 }

@@ -17,8 +17,11 @@ public class Place {
     private double latitude;
     private double longitude;
 
-    @OneToMany(mappedBy = "occurence", cascade = CascadeType.ALL)
-    private List<Price> prices = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Prize> prices = new ArrayList<>();
+
+    public Place() {
+    }
 
     public Place(String name, boolean isSponsored, double latitude, double longitude) {
         this.name = name;
@@ -63,11 +66,11 @@ public class Place {
         this.latitude = latitude;
     }
 
-    public List<Price> getPrices() {
+    public List<Prize> getPrices() {
         return prices;
     }
 
-    public void setPrices(List<Price> prices) {
+    public void setPrices(List<Prize> prices) {
         this.prices = prices;
     }
 }

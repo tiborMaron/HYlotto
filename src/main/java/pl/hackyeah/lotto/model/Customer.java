@@ -21,6 +21,9 @@ public class Customer {
     private String city;
     private String addr;
 
+    public Customer() {
+    }
+
     public Customer(String firstName, String lastName, Date birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
