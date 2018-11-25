@@ -1,0 +1,3 @@
+<agm-map style="height: 400px" [zoom]="zoom" [latitude]="lat" [longitude]="long">
+  <agm-marker *ngFor="let coordinate of coordinates" [latitude]="coordinate.lat" [longitude]="coordinate.long"></agm-marker>
+</agm-map>
