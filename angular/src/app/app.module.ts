@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
+import { CoordinateService } from "./service/coordinate.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    CoordinateService
   ],
   imports: [
     BrowserModule,
