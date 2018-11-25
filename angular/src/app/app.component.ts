@@ -8,11 +8,12 @@ import {PlaceService} from "./service/place.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  detailPlace: Place;
   showDetails: boolean = false;
   places: Place[];
 
   openDetails(place: Place) {
-    console.log(place);
+    this.detailPlace = place;
     this.showDetails = true;
   }
 
