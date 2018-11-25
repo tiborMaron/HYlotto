@@ -10,8 +10,8 @@ export class MapComponent {
   @Output() markerTriggered = new EventEmitter<Place>();
   @Input() places: Place[];
   zoom: number = 20;
-  lat: number = 51.678418;
-  long: number = 7.809007;
+  lat: number = 52.22978;
+  long: number = 21.013901;
   name = "here goes the name";
 
   constructor(){}
