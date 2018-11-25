@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Coordinate} from "../model/coordinate";
 
 @Component({
   selector: 'app-map',
@@ -8,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class MapComponent implements OnInit {
   zoom: number = 20;
   lat: number = 51.678418;
-  lng: number = 7.809007;
+  long: number = 7.809007;
+  coordinates: Coordinate[] = [{lat: 51.678418, long: 7.809007}, {lat: 50.678418, long: 7.809007}];
 
   constructor() { }
 
