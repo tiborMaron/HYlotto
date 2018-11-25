@@ -1,7 +1,8 @@
+import {Price} from "./price";
+
 export class Place {
   name: string;
-  lat: number;
-  long: number;
-
-
+  latitude: number;
+  longitude: number;
+  prices: Price[];
 }
